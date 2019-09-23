@@ -4,19 +4,21 @@
     </head>
     <body>
         <div>
-            <h1><a>Sachin Lodhi Blog Is Here</a></h1>
+           <h1><a href=''>Sachin Lodhi Blog Is Here</a><h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2019, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>I have changed this thing for uploading it on the web and I am working on the django and i am learning it by myself.</p>
-        </div>
+        {% for i in posts %}
+        
 
-        <div>
-            <p>published: 14.06.2019, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is the second post</p>
-        </div>
-    </body>
+<div>
+	
+<p> Published : {{ i.published_date }}</p>
+<h2><a href=''> {{ i.title }}</a></h2>
+<p> {{ i.text|linebreaksbr }}</p>
+
+</div>
+
+
+        {% endfor %}
+                </body>
 </html>
