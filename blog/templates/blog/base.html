@@ -9,7 +9,9 @@
     </head>
     <body>
         <div class="page-header">
-            <a href="{% url 'post_new %'}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
            <h1><a href=''>Testing with Django</a><h1>
         </div>
 
@@ -18,7 +20,7 @@
         <div class="col-md-8">
            {% block content %}
            {% endblock %}
-<img src="{% static 'photos/pic_40.jpeg' %}" alt="Pic is not available">
+
 
 
         </div>
